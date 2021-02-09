@@ -1,0 +1,40 @@
+body {
+  background-color: lightyellow;
+}
+#meal-container,
+#meal-category-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.meal {
+  width: 300px;
+  cursor: pointer;
+}
+.category {
+  width: 350px;
+}
+.card {
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(187, 222, 176, 0.25);
+  /* cursor: pointer; */
+}
+.card img,
+#meal-detail {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card-body {
+  background-color: rgba(255, 160, 122, 0.25);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#meal-detail {
+  width: 560px;
+  background-color: rgba(144, 238, 144, 0.25);
+  margin: 0 auto;
+}
+P {
+  font-weight: 800;
+}
