@@ -18,7 +18,7 @@ body {
   border: none;
   border-radius: 10px;
   background-color: rgba(187, 222, 176, 0.25);
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 .card img,
 #meal-detail {
@@ -31,9 +31,8 @@ body {
   border-bottom-left-radius: 10px;
 }
 #meal-detail {
-  width: 560px;
+  max-width: 560px;
   background-color: rgba(144, 238, 144, 0.25);
-  margin: 0 auto;
 }
 P {
   font-weight: 800;

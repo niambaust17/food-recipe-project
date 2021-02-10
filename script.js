@@ -58,7 +58,7 @@ const showMealDetail = (mealDetail) =>
     const mealDetailInfo = `
     <h1 class='ms-4'>${ mealDetail.strMeal }</h1>
     <ul id="ingredient"></ul>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/${ videoSrc }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/${ videoSrc }" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     `;
     mealDetailContainer.innerHTML = mealDetailInfo;
     for (let i = 1; i < 21; i++)
@@ -96,7 +96,7 @@ const showCategory = data =>
 
         const categoryDivInfo = `
         <div class="col">
-            <div class="card m-3">
+            <div onclick="showCategoryMeal('${ category.strCategory }')" class="card m-3">
                 <img src="${ category.strCategoryThumb }" class="card-img-top" alt="...">
                 <div class="card-body">
                     <p class="card-title text-center">${ category.strCategory }</p>
@@ -108,3 +108,11 @@ const showCategory = data =>
     });
 };
 
+const showCategoryMeal = (categoryName) =>
+{
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${ categoryName }`)
+        .then(res => res.json())
+        .then(data => showMeals(data))
+    document.querySelector('#meal-container').innerHTML = '';
+    document.querySelector('#meal-category-container').innerHTML = '';
+}
