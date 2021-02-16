@@ -116,3 +116,12 @@ const showCategoryMeal = (categoryName) =>
     document.querySelector('#meal-container').innerHTML = '';
     document.querySelector('#meal-category-container').innerHTML = '';
 }
+
+document.getElementById("searchMeal").addEventListener("keyup", function (event)
+{
+    if (event.key === "Enter")
+    {
+        event.preventDefault();
+        loadMeal();
+    }
+});
